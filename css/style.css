@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap');
+
 html, body{
 	width: 100%;
 	height: 100%;
 	padding: 0;
 	margin: 0;
-
+	font-family: 'Inter', sans-serif;
+	background-color: #fcfcfc;
+	scroll-behavior: smooth;
 }
 
 body{
 	max-width: 1440px;
 	margin: 0 auto;
+	box-shadow: 0 0 50px rgba(0,0,0,0.05);
 }
 
 
@@ -16,9 +21,16 @@ body{
 .navbar--mod{
 	display: inline-block;
 	width: 100%;
-	background-color: #1B1919;
+	background-color: rgba(27, 25, 25, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	padding: 0 5%;
 	padding-left: 13.5%;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
 }
 .navbar__title{
 	position: relative;
@@ -31,6 +43,10 @@ body{
 	text-decoration: none;
 	font-weight: 900;
 	letter-spacing: 2px;
+	transition: color 0.3s ease;
+}
+.navbar__title a:hover {
+	color: #018790;
 }
 .navbar__title--under--line{
 	position: relative;
@@ -56,13 +72,19 @@ body{
 .navbar__menu ul li{
 	display: inline-block;
 }
-.navbar__menu ul li a,.navbar__menu ul li a:focus,.navbar__menu ul li a:hover{
+.navbar__menu ul li a,.navbar__menu ul li a:focus{
 	display: inline-block;
 	color: white;
 	text-transform: uppercase;
 	margin: 0 5px;
 	padding: 15px 5px;
 	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+}
+.navbar__menu ul li a:hover{
+	color: #018790;
+	transform: translateY(-2px);
 }
 .navbar__menu__button__side{
 	cursor: pointer;
@@ -248,11 +270,14 @@ body{
 	height: 250px;
 	overflow: hidden;
 	position: relative;
-	transition: .5s;
+	transition: .5s ease;
+	border-radius: 16px;
 }
 .portofolio__body__content__image img{
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
+	transition: transform .5s ease;
 }
 .portofolio__body__content__description{
 	position: absolute;
@@ -292,9 +317,14 @@ body{
 }
 .portofolio__body__content__image:hover .portofolio__body__content__description{
 	opacity: 1;
+	transform: translate(-50%, -40%);
+}
+.portofolio__body__content__image:hover img{
+	transform: scale(1.08);
 }
 .portofolio__body__content__image:hover {
-	box-shadow: 0px 3px 15px #656565;
+	box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+	transform: translateY(-5px);
 }
 .portofolio__body__content--padding{
 	padding: 13px;
